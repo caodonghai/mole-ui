@@ -3,10 +3,10 @@ hero:
   title: mole-ui
   description: 一个基于react开发的通用组件库
   actions:
-    - text: 介绍
-      link: /
+    - text: 指南
+      link: /guide
     - text: 组件
-      link: /
+      link: /components
 features:
   - title: 简单易用
     emoji: 💎

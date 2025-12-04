@@ -159,3 +159,5 @@ export default () => {
   );
 };
 ```
+
+<API id="BoardDesigner"></API>

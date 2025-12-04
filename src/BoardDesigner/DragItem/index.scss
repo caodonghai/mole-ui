@@ -1,0 +1,23 @@
+.drag-item {
+  width: 100px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+
+  &__el {
+    width: 100px;
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid #dddddd;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 14px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #555555;
+    line-height: 14px;
+    margin-top: 14px;
+  }
+}

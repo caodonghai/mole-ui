@@ -1,0 +1,14 @@
+.preview-layout {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+
+  &__container {
+  }
+
+  &__item {
+    border-radius: v-bind('borderRadius');
+    overflow: hidden;
+  }
+}

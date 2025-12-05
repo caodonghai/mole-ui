@@ -12,7 +12,7 @@ interface ISwitchGroupProps {
   options: IValueSwitchGroup[];
   componentProps?: Record<string, any>;
   field?: any;
-  fieldOption?: IFieldOption;
+  fieldOption: IFieldOption;
   curValues?: Record<string, any>;
   baseName: IBaseNames;
   baseComponent?: any;

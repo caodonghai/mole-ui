@@ -1,0 +1,7 @@
+@import '/public/styles/common.scss';
+
+$rule-designer-prefix-cls: '#{$mole-prefix}-rule-designer';
+
+.#{$rule-designer-prefix-cls}-box {
+  display: flex;
+}

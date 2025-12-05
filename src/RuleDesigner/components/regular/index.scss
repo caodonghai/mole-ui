@@ -1,0 +1,13 @@
+@import '/public/styles/common.scss';
+
+$relation-base-prefix-cls: '#{$mole-prefix}-filter-conditions-regular';
+
+.#{$relation-base-prefix-cls}-box {
+  display: flex;
+}
+
+.select-is-delete {
+  .ant-select-selection-item {
+    color: red;
+  }
+}

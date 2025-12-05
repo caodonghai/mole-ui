@@ -1,0 +1,7 @@
+@import '/public/styles/common.scss';
+
+$relation-base-prefix-cls: '#{$mole-prefix}-filter-conditions-relation-group';
+
+.#{$relation-base-prefix-cls}-box {
+  display: flex;
+}

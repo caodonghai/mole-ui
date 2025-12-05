@@ -1,0 +1,8 @@
+@import '/public/styles/common.scss';
+
+// 修复Less语法为SCSS语法
+$relation-base-prefix-cls: '#{$mole-prefix}-filter-conditions-value-render';
+
+.#{$relation-base-prefix-cls}-box {
+  display: flex;
+}

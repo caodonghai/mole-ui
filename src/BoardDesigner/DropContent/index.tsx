@@ -38,6 +38,7 @@ export interface DropContentProps {
     e: DragItemData,
     list: DragItemData[],
   ) => Promise<boolean> | boolean;
+  renderItem?: (item: DragItemData, designable?: boolean) => React.ReactNode;
 }
 
 export interface DropContentRef {

@@ -18,10 +18,7 @@ interface ISwitchGroupProps {
   baseComponent?: any;
   required?: boolean;
   disabled?: boolean;
-  filterByDataType: boolean;
-  hiddenSwitchGroup?: boolean;
   onChangeValue: (nextV: Record<string, any>) => void;
-  $scope: Record<string, any>;
   fillDefaultValue?: boolean;
 }
 
@@ -34,11 +31,8 @@ export const SwitchGroup = (props: ISwitchGroupProps) => {
     field,
     fieldOption,
     required = false,
-    filterByDataType,
-    hiddenSwitchGroup = false,
     baseName,
     onChangeValue,
-    $scope,
     fillDefaultValue,
   } = props;
 
@@ -49,7 +43,6 @@ export const SwitchGroup = (props: ISwitchGroupProps) => {
     field?.field?.dataType ||
     curValues?.dataType ||
     field.dataType;
-  const fieldModel = _.get(field, ['field', 'modelName']);
 
   const Component = BaseComponent || Fragment;
 
@@ -57,32 +50,6 @@ export const SwitchGroup = (props: ISwitchGroupProps) => {
     let dataSource = _.cloneDeep(
       options?.find((ele) => ele?.value === _valueType)?.treeData || [],
     );
-    if (filterByDataType && !['custom', 'system'].includes(_valueType)) {
-      dataSource = dataSource.filter((item) => {
-        if (item.filter) {
-          return item.filter(truthDataType, curValues, fieldModel);
-        }
-        return item.dataType === truthDataType || item.dataType === 'object';
-      });
-      // 特殊处理object格式的数据
-      dataSource = _.map(dataSource, (ds) => {
-        if (ds.dataType === 'object') {
-          ds.children = _.filter(ds.children, (it: any) => {
-            if (it.filter) {
-              return it.filter(truthDataType, curValues, fieldModel);
-            }
-            return it.dataType === truthDataType;
-          });
-          if (!_.includes(['model', 'modelSet'], truthDataType)) {
-            return {
-              ...ds,
-              disabled: true,
-            };
-          }
-        }
-        return ds;
-      });
-    }
     return dataSource;
   };
 
@@ -92,7 +59,6 @@ export const SwitchGroup = (props: ISwitchGroupProps) => {
         {...fieldOption}
         style={{ width: 110 }}
         initialValue={options?.[0]?.value}
-        hidden={hiddenSwitchGroup}
         key={fieldOption.key + 'valueType'}
         name={[fieldOption.name, 'rule', 'valueType']}
         rules={[{ required, message: '该字段必填' }]}
@@ -140,7 +106,6 @@ export const SwitchGroup = (props: ISwitchGroupProps) => {
                   curField={field}
                   dataType={truthDataType}
                   curValues={curValues}
-                  $scope={$scope}
                   {...componentProps}
                 />
               </Form.Item>

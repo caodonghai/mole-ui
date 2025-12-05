@@ -1,49 +1,36 @@
-import { RuleDesigner, IRuleDesignerProps } from 'mole-ui';
+import { RuleDesigner } from 'mole-ui';
 import _ from 'lodash-es';
 
 import { fieldDataList } from '../mock';
-import { IValueSwitchGroup } from './interface';
 import SwitchGroup from './SwitchGroup';
-import { switchGroupConfigs } from './const';
-import { useMemo } from 'react';
 
 
-interface ICustomRenderProps extends IRuleDesignerProps {
-  valueSwitctGroup?: IValueSwitchGroup[];
-  filterByDataType?: boolean;
-  /**
-   * 隐藏切换组件
-   */
-  hiddenSwitchGroup?: boolean;
-}
-
-export default (props: ICustomRenderProps) => {
-
-  const {
-    valueSwitctGroup = [],
-    hiddenSwitchGroup,
-    filterByDataType = true,
-    ...rest
-  } = props;
-
-
-  const switchOptions = useMemo(
-    () => [
-      ...valueSwitctGroup,
-      { label: '自定义', value: 'custom' },
-      ...switchGroupConfigs,
-    ],
-    [valueSwitctGroup],
-  );
-
+export default () => {
   const renderValueCom = (Component, config) => {
     return (
       <SwitchGroup
-        options={switchOptions}
-        filterByDataType={filterByDataType}
+        options={[
+          { label: '自定义', value: 'custom' },
+          {
+            label: '系统变量',
+            value: 'system',
+            treeData: [
+              {
+                label: '当前用户',
+                value: '${_SESSION_PERSON}',
+              },
+              {
+                label: '当前用户所在部门',
+                value: '${_SESSION_DEPARTMENT}',
+              },
+              {
+                label: '当前用户所在公司',
+                value: '${_SESSION_COMPANY}',
+              },
+            ],
+          },
+        ]}
         baseComponent={Component}
-        hiddenSwitchGroup={hiddenSwitchGroup}
-        fillDefaultValue={rest.fillDefaultValue}
         {...config}
       />
     );
@@ -52,7 +39,6 @@ export default (props: ICustomRenderProps) => {
   return (
     <RuleDesigner
       fieldList={fieldDataList}
-      disabledField
       renderValueCom={renderValueCom}
       initValues={{
         type: 'CONDITION',

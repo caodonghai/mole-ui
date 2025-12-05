@@ -25,7 +25,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({
             {item.list.map((it) => (
               <div className="drag-group-item" key={it.key}>
                 <DragItem
-                  data={it}
+                  data={it as any}
                   groupName={groupName}
                   onClick={(e) => onDragItemClick && onDragItemClick(e, it)}
                 />

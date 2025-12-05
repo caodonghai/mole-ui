@@ -1,0 +1,17 @@
+.variable-select-tree-popup {
+  color: aquamarine;
+  max-width: 300px;
+}
+
+.variable-select-tree-popup .ant-select-tree .ant-select-tree-node-content-wrapper {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tree-select-delete {
+  .ant-select-selection-item {
+    color: red;
+  }
+}

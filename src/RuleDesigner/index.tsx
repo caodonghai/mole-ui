@@ -243,7 +243,7 @@ export const RuleDesigner = forwardRef(function RuleDesigner(props: IRuleDesigne
                           add={add}
                           remove={(fieldName) => {
                             remove(fieldName)
-                            const currFieldVal = form.getFieldValue([])
+                            const currFieldVal = form.getFieldsValue()
                             let nextFieldValue: any = currFieldVal
                             if (
                               currFieldVal.type === RULE_ITEM_TYPE_ENUM.CONDITION &&
@@ -251,7 +251,8 @@ export const RuleDesigner = forwardRef(function RuleDesigner(props: IRuleDesigne
                               currFieldVal?.children?.[0]?.type === RULE_ITEM_TYPE_ENUM.CONDITION
                             ) {
                               nextFieldValue = currFieldVal.children[0]
-                              form.setFieldValue([], nextFieldValue)
+                              form.setFieldsValue(nextFieldValue)
+
                             }
                           }}
                           fields={fields}

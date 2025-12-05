@@ -42,6 +42,10 @@
 
 <code src="./code/RuleDesigner/Modal.tsx"></code>
 
+## 自定义渲染组件
+
+<code src="./code/RuleDesigner/CustomRender/index.tsx"></code>
+
 ## API
 
 <API id="RuleDesigner"></API>

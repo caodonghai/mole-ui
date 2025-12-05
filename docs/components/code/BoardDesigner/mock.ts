@@ -1,4 +1,4 @@
-import { DragSchema } from './interface';
+import { DragSchema } from 'mole-ui';
 
 const dragList: DragSchema[] = [
   {

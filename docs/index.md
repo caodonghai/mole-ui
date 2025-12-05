@@ -6,7 +6,7 @@ hero:
     - text: 指南
       link: /guide
     - text: 组件
-      link: /components
+      link: /components/board-designer
 features:
   - title: 简单易用
     emoji: 💎

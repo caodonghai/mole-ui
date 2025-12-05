@@ -34,6 +34,14 @@
 
 <code src="./code/RuleDesigner/DeleteTip.tsx"></code>
 
+## 自定义空状态按钮
+
+<code src="./code/RuleDesigner/EmptyBtn.tsx"></code>
+
+## 在弹窗中使用
+
+<code src="./code/RuleDesigner/Modal.tsx"></code>
+
 ## API
 
 <API id="RuleDesigner"></API>

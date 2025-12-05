@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Select, Form, Space, Button } from 'antd'
 import { FormListFieldData } from 'antd/es/form'
-import { EditOutlined } from '@ant-design/icons'
+import { DeleteOutlined } from '@ant-design/icons'
 import _ from 'lodash-es'
 import {
   IFieldData,
@@ -158,7 +158,7 @@ export const Regular: React.FC<IRegularProps> = ({ fieldOption, baseName = [], a
           <Form.Item>
             <Space align="center">
               {disabledField ? null : (
-                <EditOutlined
+                <DeleteOutlined
                   size={20}
                   onClick={() => remove(fieldOption.name)}
                 />

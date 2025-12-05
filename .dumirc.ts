@@ -4,6 +4,8 @@ export default defineConfig({
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'mole-ui',
+    lastUpdated: true,
+    logo: '/logo.png',
     hd: {
       rules: [],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7

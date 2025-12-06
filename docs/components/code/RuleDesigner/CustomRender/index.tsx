@@ -1,5 +1,4 @@
-import { RuleDesigner } from 'mole-ui';
-import _ from 'lodash-es';
+import { RuleDesigner } from '../../../../../src';
 
 import { fieldDataList } from '../mock';
 import SwitchGroup from './SwitchGroup';

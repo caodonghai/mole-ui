@@ -2,7 +2,7 @@
 import { Form, Select, Space } from 'antd';
 import React, { Fragment } from 'react';
 import { CONDITION_ENUM } from 'mole-ui';
-import _ from 'lodash-es';
+import * as _ from 'lodash-es';
 
 import { baseComponentProps } from './const';
 import { IValueSwitchGroup, IBaseNames, IFieldOption } from './interface';

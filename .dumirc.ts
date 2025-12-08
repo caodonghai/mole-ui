@@ -5,7 +5,7 @@ export default defineConfig({
   exportStatic: {},
   mfsu: false,
   logo: '/images/logo.png',
-  favicon: '/images/logo.ico',
+  favicons: ['/images/logo.ico'],
   locales: [{ id: 'zh-CN', name: '中文' }],
   base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
   publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',

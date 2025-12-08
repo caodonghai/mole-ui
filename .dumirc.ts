@@ -2,25 +2,20 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   outputPath: 'docs-dist',
+  exportStatic: {},
+  mfsu: false,
+  logo: '/images/logo.png',
+  favicons: ['/images/logo.ico'],
+  locales: [{ id: 'zh-CN', name: '中文' }],
+  base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+  runtimePublicPath: {},
   themeConfig: {
     name: 'mole-ui',
-    lastUpdated: true,
-    logo: '/images/logo.png',
-    favicons: ['/images/logo.ico'],
-    locales: [{ id: 'zh-CN', name: '中文' }],
-    base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
-    publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
-    runtimePublicPath: {},
     hd: {
       rules: [],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7
     },
-    exportStatic: {},
-    dva: { skipModelValidate: true, lazyLoad: true },
-    model: {},
-    mfsu: false,
-    initialState: {},
-    request: {},
     nav: [
       { title: '指南', link: '/guide', activePath: '/guide' },
       {

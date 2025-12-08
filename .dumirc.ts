@@ -5,8 +5,8 @@ export default defineConfig({
   themeConfig: {
     name: 'mole-ui',
     lastUpdated: true,
-    logo: './images/logo.png',
-    favicons: ['./images/logo.ico'],
+    logo: '/images/logo.png',
+    favicons: ['/images/logo.ico'],
     locales: [{ id: 'zh-CN', name: '中文' }],
     base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
     publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',

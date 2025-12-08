@@ -5,10 +5,10 @@ export default defineConfig({
   exportStatic: {},
   mfsu: false,
   logo: '/images/logo.png',
-  favicons: ['/images/logo.ico'],
+  favicon: '/images/logo.ico',
   locales: [{ id: 'zh-CN', name: '中文' }],
-  base: '/',
-  publicPath: '/',
+  base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
   runtimePublicPath: {},
   themeConfig: {
     name: 'mole-ui',

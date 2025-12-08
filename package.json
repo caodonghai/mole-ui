@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "A react library developed with dumi",
   "license": "MIT",
+  "sideEffects": [
+    "dist/",
+    "docs-dist/",
+    "src//style/",
+    ".scss"
+  ],
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

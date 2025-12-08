@@ -6,13 +6,21 @@ export default defineConfig({
     name: 'mole-ui',
     lastUpdated: true,
     logo: './images/logo.png',
+    favicons: ['./images/logo.ico'],
     locales: [{ id: 'zh-CN', name: '中文' }],
-    base: '/',
-    publicPath: '/',
+    base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+    publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+    runtimePublicPath: {},
     hd: {
       rules: [],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7
     },
+    exportStatic: {},
+    dva: { skipModelValidate: true, lazyLoad: true },
+    model: {},
+    mfsu: false,
+    initialState: {},
+    request: {},
     nav: [
       { title: '指南', link: '/guide', activePath: '/guide' },
       {
@@ -28,11 +36,11 @@ export default defineConfig({
     ] as any,
     footer: 'Copyright © 2025  Powered by 人生海海',
   },
-  apiParser: {
-    // 配置 API 解析
-  },
-  resolve: {
-    // 配置入口文件路径，API 解析将从这里开始
-    entryFile: './src/index.ts',
-  },
+  // apiParser: {
+  //   // 配置 API 解析
+  // },
+  // resolve: {
+  //   // 配置入口文件路径，API 解析将从这里开始
+  //   entryFile: './src/index.ts',
+  // },
 });

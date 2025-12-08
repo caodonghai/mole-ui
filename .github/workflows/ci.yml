@@ -20,8 +20,8 @@ jobs:
           node-version: 20
       - name: Install dependencies and build
         run: |
-          npm install
-          npm run docs:build
+          pnpm install
+          pnpm run docs:build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:

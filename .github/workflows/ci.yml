@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # 手动触发
 
 jobs:
   build-and-deploy:
@@ -12,18 +13,33 @@ jobs:
     # 新增权限配置结束
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 设置 Node.js 环境
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install dependencies and build
+          cache: 'npm'
+
+      # 3. 安装依赖
+      - name: Install dependencies
         run: |
+          npm ci
           npm install
+
+      # 4. 构建 Dumi 文档
+      - name: Build Dumi site
+        run: |
           npm run docs:build
+
+      # 5. 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: docs-dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs-dist   # Dumi 默认输出目录，可能是 .doc 或 dist
+          publish_branch: gh-pages
+          force_orphan: true

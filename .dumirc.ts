@@ -5,10 +5,10 @@ export default defineConfig({
   themeConfig: {
     name: 'mole-ui',
     lastUpdated: true,
-    logo: '/images/logo.png',
+    logo: './images/logo.png',
     locales: [{ id: 'zh-CN', name: '中文' }],
-    base: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
-    publicPath: process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/',
+    base: '/',
+    publicPath: '/',
     hd: {
       rules: [],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7

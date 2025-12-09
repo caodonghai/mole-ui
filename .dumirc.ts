@@ -1,8 +1,11 @@
 import { defineConfig } from 'dumi';
-const publicPath = process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/';
+
+const NAME = 'mole-ui';
+
+const publicPath = process.env.NODE_ENV === 'production' ? `/${NAME}/` : '/';
 
 export default defineConfig({
-  title: 'mole-ui',
+  title: NAME,
   outputPath: 'docs-dist',
   exportStatic: {},
   mfsu: false,
@@ -14,7 +17,7 @@ export default defineConfig({
   publicPath: publicPath,
   runtimePublicPath: {},
   themeConfig: {
-    name: 'mole-ui',
+    name: NAME,
     hd: {
       rules: [],
       // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7

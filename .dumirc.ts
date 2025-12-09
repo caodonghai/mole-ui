@@ -2,9 +2,11 @@ import { defineConfig } from 'dumi';
 const publicPath = process.env.NODE_ENV === 'production' ? `/mole-ui/` : '/';
 
 export default defineConfig({
+  title: 'mole-ui',
   outputPath: 'docs-dist',
   exportStatic: {},
   mfsu: false,
+  mode: 'site',
   logo: `${publicPath}images/logo.png`,
   favicons: [`${publicPath}images/logo.ico`],
   headScripts: [`window.publicPath='${publicPath}';`],
@@ -12,6 +14,9 @@ export default defineConfig({
   base: publicPath,
   publicPath: publicPath,
   runtimePublicPath: {},
+  devServer: {
+    port: 1995, // 自定义端口号
+  },
   themeConfig: {
     name: 'mole-ui',
     hd: {

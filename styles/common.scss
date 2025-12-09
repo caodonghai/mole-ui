@@ -1,0 +1,24 @@
+/**
+定义共用的样式变量，如：颜色、高度、宽度等。。。
+【注意】对于主题样式，要通过 antd5 提供的定制主题的 seeds 来完成，这里只定义和主题无关的公共样式
+使用方式（在组件的less文件中通过绝对路径引入）：@import '/styles/common.less';
+也可在styles目录下建立其它less文件。使用方式同上
+*/
+
+/**
+=======示例=======
+*/
+
+$mole-prefix: 'mole-ui';
+
+@keyframes loading-circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

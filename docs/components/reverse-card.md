@@ -60,7 +60,7 @@ export default () => {
 
 ```tsx
 import { ReverseCard } from 'mole-ui';
-import { message } from "antd";
+import { message, Space, Button } from "antd";
 import { useState } from "react";
 
 export default () => {
@@ -89,6 +89,7 @@ export default () => {
   }]); 
   
   return (
+    <Space direction="vertical">
     <div
       style={{
         display: 'grid',
@@ -135,6 +136,22 @@ export default () => {
         />
       ))}
     </div>
+    <Space>
+      <Button onClick={() => setDataSource((preData) => preData.slice(0, -1))}>删除卡片</Button>
+      <Button onClick={
+        () => setDataSource((preData) => [
+            ...preData,
+            { 
+              frontContent: `我是正面${preData.length + 1}`,
+              backContent: `我是背面${preData.length + 1}`
+            }
+          ]
+        )}
+      >
+      添加卡片
+      </Button>
+    </Space>
+    </Space>
   )
 }
 ```

@@ -18,3 +18,22 @@ features:
     emoji: 🚀
     description: 完整的主题定制系统，支持CSS变量<br>细粒度的组件属性配置<br>响应式设计适配各种屏幕尺寸<br>支持暗色/亮色主题一键切换
 ---
+
+<div style="display: flex; gap: 20px; margin: 20px 0;font-size: 14px;">
+  <div style="flex: 1;">
+    <h4 style="font-weight: bold;">相关资源</h4>
+    <a href="https://github.com/mole-ui/mole-ui" target="_blank">gitHub</a>
+  </div>
+  <div style="flex: 1;">
+    <h4 style="font-weight: bold;">社区</h4>
+    <a href="https://design.mole-ui.com" target="_blank">设计指南</a>
+  </div>
+  <div style="flex: 1;">
+    <h4 style="font-weight: bold;">帮助</h4>
+    <a href="https://github.com/mole-ui/mole-ui" target="_blank">联系我们</a>
+  </div>
+  <div style="flex: 1;">
+    <h4 style="font-weight: bold;">更多产品</h4>
+    <a href="https://github.com/mole-ui/mole-ui" target="_blank">更多产品</a>
+  </div>
+</div>

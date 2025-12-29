@@ -1,6 +1,6 @@
-# ReverseCard
+# 反转卡片
 
-反转卡片
+ReverseCard
 
 ## 基本使用
 

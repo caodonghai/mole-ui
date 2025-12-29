@@ -1,6 +1,6 @@
-# BoardDesigner
+# 拖拽布局
 
-拖拽布局组件
+BoardDesigner
 
 ## 设计模式
 

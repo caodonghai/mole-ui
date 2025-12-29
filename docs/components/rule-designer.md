@@ -1,6 +1,6 @@
-# RuleDesigner
+# 规则设计器
 
-规则设计器组件
+RuleDesigner
 
 ## 基本用法
 

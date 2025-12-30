@@ -92,8 +92,7 @@ export default () => {
     <Space direction="vertical">
     <div
       style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        display: 'flex',
         gap: '16px',
         flexWrap: 'wrap',
       }}

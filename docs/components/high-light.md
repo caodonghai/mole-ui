@@ -45,11 +45,13 @@ export default () => {
       highLightContext={[
         {
           highLightText: "人工智能",
-          handler: (text) => `<span style="color: #FF00FF">${text}</span>`,
+          handler: (text) => `<span style="color: #FF00FF; background-color: #FFFF00">${text}</span>`,
         },
         {
           highLightText: "算法",
-          handler: (text) => `<span style="color: #0000FF">${text}</span>`,
+          handler: (text) => {
+            return `<span style="color: #fff; background-color: #000; display: inline-block; border-radius: 6px; padding: 0 6px">${text}</span>`;
+          },
         },
         {
           highLightText: "数据",

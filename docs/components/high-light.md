@@ -45,27 +45,19 @@ export default () => {
       highLightContext={[
         {
           highLightText: "人工智能",
-          handler: (text) => {
-            return `<span style="color: #FF00FF">${text}</span>`;
-          },
+          handler: (text) => `<span style="color: #FF00FF">${text}</span>`,
         },
         {
           highLightText: "算法",
-          handler: (text) => {
-            return `<span style="color: #0000FF">${text}</span>`;
-          },
+          handler: (text) => `<span style="color: #0000FF">${text}</span>`,
         },
         {
           highLightText: "数据",
-          handler: (text) => {
-            return `<span style="color: #FF66FF">${text}</span>`;
-          },
+          handler: (text) => `<span style="color: #FF66FF">${text}</span>`,
         },
         {
           highLightText: "技术",
-          handler: (text) => {
-            return `<span style="color: #0099FF">${text}</span>`;
-          },
+          handler: (text) => `<span style="color: #0099FF">${text}</span>`,
         },
       ]}
     />

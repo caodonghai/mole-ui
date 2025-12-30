@@ -29,4 +29,8 @@ export const HighLight: FC<IHighLightProps> = (props) => {
   return <span dangerouslySetInnerHTML={{ __html: htmlStr }} />;
 };
 
+HighLight.displayName = 'HighLight';
+
+export * from './interface';
+
 export default HighLight;

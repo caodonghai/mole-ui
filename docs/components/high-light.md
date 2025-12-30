@@ -67,4 +67,10 @@ export default () => {
 
 ## API
 
+### HighLight
+
 <API id="HighLight"></API>
+
+### IHighLightContext
+
+<API id="IHighLightContext" interface="IHighLightContext" src="../../src/HighLight/index.tsx"></API>
